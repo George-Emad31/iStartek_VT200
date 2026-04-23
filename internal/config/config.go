@@ -43,15 +43,6 @@ func envStr(key, defaultValue string) string {
 	return defaultValue
 }
 
-func envInt(key string, defaultValue int) int {
-	if v := os.Getenv(key); v != "" {
-		if i, err := strconv.Atoi(v); err == nil {
-			return i
-		}
-	}
-	return defaultValue
-}
-
 func envUint8(key string, defaultValue uint8) uint8 {
 	if v := os.Getenv(key); v != "" {
 		if i, err := strconv.Atoi(v); err == nil && i >= 0 && i <= 255 {
